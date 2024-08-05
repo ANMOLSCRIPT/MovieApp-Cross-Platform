@@ -1,20 +1,17 @@
 package com.example.movieappkmm.data.repository
 
 import com.example.movieappkmm.data.remote.RemoteDataSource
-import com.example.movieappkmm.data.util.toMovie
 import com.example.movieappkmm.domain.model.Movie
 import com.example.movieappkmm.domain.repository.MovieRepository
 
 internal class MovieRepositoryImpl(
     private val remoteDataSource: RemoteDataSource
-): MovieRepository {
+) : MovieRepository {
     override suspend fun getMovies(page: Int): List<Movie> {
-        return remoteDataSource.getMovies(page = page).results.map {
-            it.toMovie()
-        }
+        return remoteDataSource.getMovies(page = page)
     }
 
     override suspend fun getMovie(movieId: Int): Movie {
-        return remoteDataSource.getMovie(movieId = movieId).toMovie()
+        return remoteDataSource.getMovie(movieId = movieId)
     }
 }

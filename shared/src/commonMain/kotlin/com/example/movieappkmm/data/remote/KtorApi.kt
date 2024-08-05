@@ -9,8 +9,8 @@ import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-private const val BASE_URL = "https://www.themoviedb.org/"
-private const val API_KEY = "7bd2abca48be86c6e03e6dbc4fdcf883"
+private const val BASE_URL = "https://api.themoviedb.org/"
+private const val API_KEY = "*Key is private*"
 
 internal abstract class KtorApi {
     val client = HttpClient {
